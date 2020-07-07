@@ -11,6 +11,7 @@
 		334CDFDF929EBB7A5D847A6C /* Pods_Fastgram_FastgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B6D932577C60BAEE05CBC8 /* Pods_Fastgram_FastgramUITests.framework */; };
 		798DC8F759FC1B402E083F6A /* Pods_FastgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE606835373B7619FD5622E /* Pods_FastgramTests.framework */; };
 		80D599DC24B5173D006E5571 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D599DB24B5173D006E5571 /* HomeFeedViewController.m */; };
+		80D599E224B528E5006E5571 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D599E124B528E5006E5571 /* PostCell.m */; };
 		80E566B024B3DDE90044223F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E566AF24B3DDE90044223F /* AppDelegate.m */; };
 		80E566B324B3DDE90044223F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E566B224B3DDE90044223F /* SceneDelegate.m */; };
 		80E566B924B3DDE90044223F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E566B724B3DDE90044223F /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		43BA576B3360278CDB00802E /* Pods_Fastgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D599DA24B5173D006E5571 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		80D599DB24B5173D006E5571 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		80D599E024B528E5006E5571 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		80D599E124B528E5006E5571 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		80E566AB24B3DDE90044223F /* Fastgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fastgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80E566AE24B3DDE90044223F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		80E566AF24B3DDE90044223F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,9 +112,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		80D599DF24B528BB006E5571 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80D599E024B528E5006E5571 /* PostCell.h */,
+				80D599E124B528E5006E5571 /* PostCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		80E566A224B3DDE90044223F = {
 			isa = PBXGroup;
 			children = (
+				80D599DF24B528BB006E5571 /* Views */,
 				80E566E324B3E4BA0044223F /* ViewControllers */,
 				80E566AD24B3DDE90044223F /* Fastgram */,
 				80E566C924B3DDEB0044223F /* FastgramTests */,
@@ -433,6 +446,7 @@
 				80E566C124B3DDEA0044223F /* main.m in Sources */,
 				80E566B324B3DDE90044223F /* SceneDelegate.m in Sources */,
 				80E566E624B3E4E40044223F /* LoginViewController.m in Sources */,
+				80D599E224B528E5006E5571 /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

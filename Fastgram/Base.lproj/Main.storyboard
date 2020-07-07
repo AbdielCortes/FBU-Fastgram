@@ -216,32 +216,63 @@
         <!--Capture-->
         <scene sceneID="YfT-e9-mqc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="N6c-zQ-MNs" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="N6c-zQ-MNs" customClass="CaptureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEg-uw-6Kz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-ZZ-I2I">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-ZZ-I2I">
                                 <rect key="frame" x="82" y="56" width="250" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NWJ-ZZ-I2I" secondAttribute="height" multiplier="1:1" id="5Pp-Gh-dQA"/>
+                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SuR-hh-Cv3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SuR-hh-Cv3">
                                 <rect key="frame" x="20" y="331" width="374" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SuR-hh-Cv3" secondAttribute="height" multiplier="187:90" id="TW5-Gv-aM4"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0g-lr-lVn">
+                                <rect key="frame" x="82" y="56" width="250" height="250"/>
+                                <connections>
+                                    <action selector="tappedImage:" destination="N6c-zQ-MNs" eventType="touchUpInside" id="Nll-LN-pNE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SuR-hh-Cv3" firstAttribute="top" secondItem="NWJ-ZZ-I2I" secondAttribute="bottom" constant="25" id="0Ec-N5-0Qt"/>
+                            <constraint firstItem="x0g-lr-lVn" firstAttribute="bottom" secondItem="NWJ-ZZ-I2I" secondAttribute="bottom" id="307-rE-Hh5"/>
+                            <constraint firstItem="NWJ-ZZ-I2I" firstAttribute="top" secondItem="xEg-uw-6Kz" secondAttribute="topMargin" id="KF2-23-Rfs"/>
+                            <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="SuR-hh-Cv3" secondAttribute="bottom" constant="248" id="Of9-XS-f5R"/>
+                            <constraint firstItem="x0g-lr-lVn" firstAttribute="trailing" secondItem="NWJ-ZZ-I2I" secondAttribute="trailing" id="QMh-aF-Oe6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NWJ-ZZ-I2I" secondAttribute="trailing" constant="62" id="UeO-qf-53B"/>
+                            <constraint firstItem="x0g-lr-lVn" firstAttribute="leading" secondItem="NWJ-ZZ-I2I" secondAttribute="leading" id="Xwn-wL-Scv"/>
+                            <constraint firstItem="SuR-hh-Cv3" firstAttribute="trailing" secondItem="xEg-uw-6Kz" secondAttribute="trailingMargin" id="cT3-TG-CID"/>
+                            <constraint firstItem="x0g-lr-lVn" firstAttribute="top" secondItem="NWJ-ZZ-I2I" secondAttribute="top" id="i93-zf-aKe"/>
+                            <constraint firstItem="NWJ-ZZ-I2I" firstAttribute="leading" secondItem="xEg-uw-6Kz" secondAttribute="leadingMargin" constant="62" id="inN-iU-AuW"/>
+                            <constraint firstItem="SuR-hh-Cv3" firstAttribute="leading" secondItem="xEg-uw-6Kz" secondAttribute="leadingMargin" id="noc-Y4-6nW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X94-GP-ZFN"/>
                     </view>
                     <navigationItem key="navigationItem" title="Capture" id="bUy-hN-taE">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="LU1-Hh-WhP">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="tappedPost:" destination="N6c-zQ-MNs" id="FIb-kb-NeA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="SuR-hh-Cv3" id="CiS-LG-RTx"/>
+                        <outlet property="image" destination="NWJ-ZZ-I2I" id="ob5-Wc-pYb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p9-ix-S5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

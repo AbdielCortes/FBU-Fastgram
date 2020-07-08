@@ -24,11 +24,11 @@
 - (void)setPost:(Post *)post {
     _post = post;
     
-    self.username.text = post.userID;
+    self.username.text = post.author.username;
     self.caption.text = post.caption;
     
     //TODO set image
-    //self.image.image = post.image;
+    self.image.image = post.image;
 }
 
 @end

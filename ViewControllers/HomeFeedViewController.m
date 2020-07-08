@@ -19,6 +19,8 @@
 
 @property (strong, nonatomic) NSArray *posts;
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation HomeFeedViewController
@@ -30,6 +32,10 @@
     self.tableView.delegate = self;
     
     [self fetchPosts];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -62,6 +68,8 @@
             NSLog(@"Error fetching posts: %@", error);
         }
     }];
+    
+    [self.refreshControl endRefreshing];
 }
 
 - (IBAction)tappedLogOut:(id)sender {

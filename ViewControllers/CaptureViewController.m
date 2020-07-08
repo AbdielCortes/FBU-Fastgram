@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation CaptureViewController
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.activityIndicator stopAnimating];
 }
 
 - (IBAction)tappedImage:(id)sender {
@@ -54,7 +57,10 @@
 }
 
 - (IBAction)tappedPost:(id)sender {
+    [self.activityIndicator startAnimating];
     [Post postUserImage:self.image.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeded, NSError *error) {
+        [self.activityIndicator stopAnimating];
+        
         if (succeded) {
             self.captionTextView.text = @"";
         }

@@ -244,6 +244,10 @@
                                     <action selector="tappedImage:" destination="N6c-zQ-MNs" eventType="touchUpInside" id="Nll-LN-pNE"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-hh-5s5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -270,6 +274,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="ysR-hh-5s5" id="Fs0-Bp-VAB"/>
                         <outlet property="captionTextView" destination="SuR-hh-Cv3" id="CiS-LG-RTx"/>
                         <outlet property="image" destination="NWJ-ZZ-I2I" id="ob5-Wc-pYb"/>
                     </connections>

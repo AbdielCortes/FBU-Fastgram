@@ -7,6 +7,7 @@ target 'Fastgram' do
 
   # Pods for Fastgram
   pod 'Parse'
+  pod 'Parse/UI'
 
   target 'FastgramTests' do
     inherit! :search_paths

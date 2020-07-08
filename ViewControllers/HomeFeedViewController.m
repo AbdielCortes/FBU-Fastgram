@@ -39,7 +39,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSLog(@"%lu", self.posts.count);
     return self.posts.count;
 }
 

@@ -21,4 +21,14 @@
     // Configure the view for the selected state
 }
 
+- (void)setPost:(Post *)post {
+    _post = post;
+    
+    self.username.text = post.userID;
+    self.caption.text = post.caption;
+    
+    //TODO set image
+    //self.image.image = post.image;
+}
+
 @end

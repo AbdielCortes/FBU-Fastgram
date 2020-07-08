@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *username;
 
 @property (weak, nonatomic) IBOutlet UILabel *caption;
+
+@property (strong, nonatomic) Post *post;
 
 @end
 

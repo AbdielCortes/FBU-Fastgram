@@ -7,6 +7,7 @@
 //
 
 #import "CaptureViewController.h"
+#import "Post.h"
 
 @interface CaptureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -44,7 +45,8 @@
     // Get the image captured by the UIImagePickerController
 //    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-
+    //UIImage *resizedImage = [self resizeImage:editedImage withSize:SIZE];
+    
     self.image.image = editedImage;
     
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -52,7 +54,28 @@
 }
 
 - (IBAction)tappedPost:(id)sender {
+    [Post postUserImage:self.image.image withCaption:self.captionTextView.text withCompletion:^(BOOL succeded, NSError *error) {
+        if (succeded) {
+            self.captionTextView.text = @"";
+        }
+        else {
+            NSLog(@"Error when posting: %@", error);
+        }
+    }];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /*

@@ -42,7 +42,6 @@
     
     Post *post= self.posts[indexPath.row];
     [cell setPost:post];
-    NSLog(@"%@, %@", cell.username, cell.caption);
     
     return cell;
 }
@@ -57,7 +56,6 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.posts = posts;
-            NSLog(@"%@", posts);
             [self.tableView reloadData];
         }
         else {

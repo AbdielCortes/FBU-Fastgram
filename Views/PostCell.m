@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import <UIKit/UIKit.h>
 
 @implementation PostCell
 
@@ -27,8 +28,8 @@
     self.username.text = post.author.username;
     self.caption.text = post.caption;
     
-    //TODO set image
-    self.image.image = post.image;
+    self.image.file = post[@"image"];
+    [self.image loadInBackground];
 }
 
 @end

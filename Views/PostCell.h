@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) Post *post;
 
+@property (weak, nonatomic) IBOutlet UILabel *timeSinceCreation;
+
 @end
 
 NS_ASSUME_NONNULL_END

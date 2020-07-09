@@ -7,7 +7,6 @@
 //
 
 #import "PostDetailsViewController.h"
-#import "NSDate+DateTools.h"
 #import <Parse/Parse.h>
 @import Parse;
 
@@ -15,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *caption;

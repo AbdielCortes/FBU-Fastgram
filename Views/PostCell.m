@@ -7,6 +7,7 @@
 //
 
 #import "PostCell.h"
+#import "NSDate+DateTools.h"
 #import <UIKit/UIKit.h>
 
 @implementation PostCell
@@ -27,6 +28,8 @@
     
     self.username.text = post.author.username;
     self.caption.text = post.caption;
+    
+    self.timeSinceCreation.text = post.createdAt.timeAgoSinceNow;
     
     self.image.file = post[@"image"];
     [self.image loadInBackground];

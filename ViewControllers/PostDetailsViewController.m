@@ -7,11 +7,15 @@
 //
 
 #import "PostDetailsViewController.h"
+#import "NSDate+DateTools.h"
+#import <Parse/Parse.h>
+@import Parse;
 
 @interface PostDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
+@property (weak, nonatomic) IBOutlet PFImageView *postImage;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
@@ -23,7 +27,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+       
+    self.username.text = self.post.author.username;
+    self.caption.text = self.post.caption;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterLongStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    self.date.text = [formatter stringFromDate:self.post.createdAt];
+   
+    self.postImage.file = self.post[@"image"];
+   [self.postImage loadInBackground];
 }
 
 /*

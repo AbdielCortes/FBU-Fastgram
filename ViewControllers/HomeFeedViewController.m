@@ -9,6 +9,7 @@
 #import "HomeFeedViewController.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
+#import "PostDetailsViewController.h"
 #import "PostCell.h"
 #import "Post.h"
 #import <Parse/Parse.h>
@@ -45,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     
-    Post *post= self.posts[indexPath.row];
+    Post *post = self.posts[indexPath.row];
     [cell setPost:post];
     
     return cell;
@@ -82,14 +83,21 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier  isEqual: @"FeedPostSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.posts[cellIndexPath.row];
+        PostDetailsViewController *postDetailsVC = [segue destinationViewController];
+        postDetailsVC.post = post;
+    }
 }
-*/
+
 
 @end

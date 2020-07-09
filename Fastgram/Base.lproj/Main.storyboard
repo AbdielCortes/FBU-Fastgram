@@ -166,7 +166,7 @@
                                             <outlet property="image" destination="58u-ji-4iX" id="iOb-sq-9ht"/>
                                             <outlet property="profileImage" destination="Djd-f3-khZ" id="97f-pI-07D"/>
                                             <outlet property="username" destination="qbC-0g-fXN" id="J8y-M6-X5q"/>
-                                            <segue destination="KCf-gT-csY" kind="show" id="3Ph-Vt-eL5"/>
+                                            <segue destination="KCf-gT-csY" kind="show" identifier="FeedPostSegue" id="3Ph-Vt-eL5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -224,7 +224,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-q4-q5l">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-q4-q5l" customClass="PFImageView">
                                 <rect key="frame" x="20" y="139" width="374" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FVX-q4-q5l" secondAttribute="height" multiplier="374:375" id="zWs-Kg-CxC"/>
@@ -261,7 +261,7 @@
                     <connections>
                         <outlet property="caption" destination="wuP-jD-khe" id="8Ea-YM-vTt"/>
                         <outlet property="date" destination="Koo-wy-ffV" id="Xhh-iq-BgQ"/>
-                        <outlet property="postImage" destination="FVX-q4-q5l" id="0nn-gi-eUr"/>
+                        <outlet property="postImage" destination="FVX-q4-q5l" id="rr5-5M-EcT"/>
                         <outlet property="profileImage" destination="0kB-dV-LSK" id="Lkz-3b-VbA"/>
                         <outlet property="username" destination="OoL-j1-kid" id="MiI-KJ-QYb"/>
                     </connections>

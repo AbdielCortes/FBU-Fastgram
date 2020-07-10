@@ -10,6 +10,7 @@
 		097A6B4A3D9E67189AA73411 /* Pods_Fastgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BA576B3360278CDB00802E /* Pods_Fastgram.framework */; };
 		334CDFDF929EBB7A5D847A6C /* Pods_Fastgram_FastgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B6D932577C60BAEE05CBC8 /* Pods_Fastgram_FastgramUITests.framework */; };
 		798DC8F759FC1B402E083F6A /* Pods_FastgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE606835373B7619FD5622E /* Pods_FastgramTests.framework */; };
+		809CC18324B920470057563C /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 809CC18224B920470057563C /* UserProfileViewController.m */; };
 		80D599DC24B5173D006E5571 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D599DB24B5173D006E5571 /* HomeFeedViewController.m */; };
 		80D599E224B528E5006E5571 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D599E124B528E5006E5571 /* PostCell.m */; };
 		80D599E524B5381A006E5571 /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D599E424B5381A006E5571 /* CaptureViewController.m */; };
@@ -47,6 +48,8 @@
 		272D782D96076A98FE8DEA3F /* Pods-Fastgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastgram.debug.xcconfig"; path = "Target Support Files/Pods-Fastgram/Pods-Fastgram.debug.xcconfig"; sourceTree = "<group>"; };
 		2CB00531B6287EEA0DCF4064 /* Pods-Fastgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fastgram.release.xcconfig"; path = "Target Support Files/Pods-Fastgram/Pods-Fastgram.release.xcconfig"; sourceTree = "<group>"; };
 		43BA576B3360278CDB00802E /* Pods_Fastgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fastgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		809CC18124B920470057563C /* UserProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		809CC18224B920470057563C /* UserProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		80D599DA24B5173D006E5571 /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
 		80D599DB24B5173D006E5571 /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
 		80D599E024B528E5006E5571 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				80D599E424B5381A006E5571 /* CaptureViewController.m */,
 				80F753BE24B7A8850047083A /* PostDetailsViewController.h */,
 				80F753BF24B7A8850047083A /* PostDetailsViewController.m */,
+				809CC18124B920470057563C /* UserProfileViewController.h */,
+				809CC18224B920470057563C /* UserProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				80E566C124B3DDEA0044223F /* main.m in Sources */,
 				80E566B324B3DDE90044223F /* SceneDelegate.m in Sources */,
 				80E566E624B3E4E40044223F /* LoginViewController.m in Sources */,
+				809CC18324B920470057563C /* UserProfileViewController.m in Sources */,
 				80D599E224B528E5006E5571 /* PostCell.m in Sources */,
 				80D599E524B5381A006E5571 /* CaptureViewController.m in Sources */,
 				80F753BD24B66BB20047083A /* Post.m in Sources */,

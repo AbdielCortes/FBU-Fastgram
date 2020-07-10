@@ -280,6 +280,66 @@
             </objects>
             <point key="canvasLocation" x="2957.971014492754" y="115.84821428571428"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="rtb-XB-FyJ">
+            <objects>
+                <navigationController modalPresentationStyle="fullScreen" id="dhQ-d7-hDV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="wjg-iJ-fNw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QuF-cK-RF8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rue-2h-v9N" kind="relationship" relationship="rootViewController" id="nSc-Oc-xzw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNu-Y4-oI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="1572"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="QHe-Dm-75h">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="rue-2h-v9N" customClass="UserProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uMi-pF-dJC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="mFG-Iy-AU9">
+                                <rect key="frame" x="20" y="76" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cnm-EF-HeW"/>
+                                    <constraint firstAttribute="width" constant="80" id="h2L-qh-yLA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGW-EO-jwA">
+                                <rect key="frame" x="108" y="76" width="286" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mFG-Iy-AU9" firstAttribute="leading" secondItem="uMi-pF-dJC" secondAttribute="leadingMargin" id="61a-85-pCu"/>
+                            <constraint firstItem="BGW-EO-jwA" firstAttribute="top" secondItem="mFG-Iy-AU9" secondAttribute="top" id="7sx-jm-hcP"/>
+                            <constraint firstItem="BGW-EO-jwA" firstAttribute="leading" secondItem="mFG-Iy-AU9" secondAttribute="trailing" constant="8" id="AUk-ex-AOM"/>
+                            <constraint firstItem="fCc-Yn-XWH" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mFG-Iy-AU9" secondAttribute="bottom" constant="30" id="V7w-9L-mhx"/>
+                            <constraint firstItem="mFG-Iy-AU9" firstAttribute="top" secondItem="uMi-pF-dJC" secondAttribute="topMargin" constant="20" id="dvq-jX-PcQ"/>
+                            <constraint firstItem="BGW-EO-jwA" firstAttribute="trailing" secondItem="uMi-pF-dJC" secondAttribute="trailingMargin" id="uGx-xQ-hbh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fCc-Yn-XWH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="Ip3-5B-H8o"/>
+                    <connections>
+                        <outlet property="profileImage" destination="mFG-Iy-AU9" id="8rq-Xm-Luf"/>
+                        <outlet property="username" destination="BGW-EO-jwA" id="2Hh-7o-i16"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WA-g4-Pn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134.7826086956525" y="1571.6517857142856"/>
+        </scene>
         <!--Capture-->
         <scene sceneID="Bdq-VE-yYm">
             <objects>
@@ -365,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1p9-ix-S5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098.5507246376815" y="835.71428571428567"/>
+            <point key="canvasLocation" x="2135" y="836"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oWa-a1-dFE">
@@ -380,6 +440,7 @@
                     <connections>
                         <segue destination="ZtH-dY-C0Z" kind="relationship" relationship="viewControllers" id="hzp-bG-KO0"/>
                         <segue destination="Nfg-04-PE6" kind="relationship" relationship="viewControllers" id="jF1-F7-Cip"/>
+                        <segue destination="dhQ-d7-hDV" kind="relationship" relationship="viewControllers" id="lyy-dV-bnZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnQ-63-GEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

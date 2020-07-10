@@ -9,6 +9,7 @@ target 'Fastgram' do
   pod 'Parse'
   pod 'Parse/UI'
   pod 'DateTools'
+  pod 'MBProgressHUD'
 
   target 'FastgramTests' do
     inherit! :search_paths

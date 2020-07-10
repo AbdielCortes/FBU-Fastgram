@@ -13,6 +13,7 @@
 #import "PostCell.h"
 #import "Post.h"
 #import <Parse/Parse.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface HomeFeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,6 +22,8 @@
 @property (strong, nonatomic) NSArray *posts;
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+@property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
@@ -31,6 +34,12 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.hud = [[MBProgressHUD alloc] initWithView:self.view];
+    self.hud.label.text = @"Loading Posts";
+    self.hud.mode = MBProgressHUDModeIndeterminate;
+    [self.view addSubview:self.hud];
+    [self.hud showAnimated:YES];
     
     [self fetchPosts];
     
@@ -63,13 +72,16 @@
         if (posts) {
             self.posts = posts;
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+            [self.hud hideAnimated:YES];
         }
         else {
             NSLog(@"Error fetching posts: %@", error);
         }
     }];
     
-    [self.refreshControl endRefreshing];
+//    [self.refreshControl endRefreshing];
+//    [self.hud hideAnimated:YES];
 }
 
 - (IBAction)tappedLogOut:(id)sender {

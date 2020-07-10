@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     [self.activityIndicator stopAnimating];
 }
 
@@ -35,8 +35,7 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
-    else {
-//        NSLog(@"Camera unavailable so we will use photo library instead");
+    else { // if camera not available, use photo library
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
 
@@ -46,8 +45,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-//    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    // shrink image resolution to make feel load faster
     UIImage *resizedImage = [self resizeImage:editedImage withSize:CGSizeMake(450, 450)];
     
     self.image.image = resizedImage;

@@ -79,9 +79,6 @@
             NSLog(@"Error fetching posts: %@", error);
         }
     }];
-    
-//    [self.refreshControl endRefreshing];
-//    [self.hud hideAnimated:YES];
 }
 
 - (IBAction)tappedLogOut:(id)sender {

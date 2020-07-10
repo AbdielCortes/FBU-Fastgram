@@ -23,7 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)tappedSignUp:(id)sender {
@@ -73,7 +72,7 @@
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
             
-            if (error.code == 203) {
+            if (error.code == 203) { // account already exists
                 [self showAccountWarning:@"Account Error" withMessage:@"Account already exists for this email address."];
             }
             else if (error.code == 202) { // account already exists

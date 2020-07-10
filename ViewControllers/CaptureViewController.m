@@ -63,6 +63,7 @@
         
         if (succeded) {
             self.captionTextView.text = @"";
+            self.image.image = [UIImage imageNamed:@"image_placeholder"];
         }
         else {
             NSLog(@"Error when posting: %@", error);
